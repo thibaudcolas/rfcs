@@ -22,16 +22,16 @@ Wagtail has two built-in media types: images and documents. Audio and video are 
 
 We can compare those limited versioning features to what is available for pages, to understand users’ expectations:
 
-| Capability              | Pages                 | Images     | Documents  |
-| ----------------------- | --------------------- | ---------- | ---------- |
-| Version history         | ✅ Full               | ❌ None    | ❌ None    |
-| Version revert          | ✅ Yes                | ❌ No      | ❌ No      |
-| Version comparison      | ✅ Yes                | ❌ No      | ❌ No      |
-| Draft/Published states  | ✅ Yes                | ❌ No      | ❌ No      |
-| Scheduled publishing    | ✅ Yes                | ❌ No      | ❌ No      |
-| Workflows               | ✅ Yes                | ❌ No      | ❌ No      |
-| Locking                 | ✅ Yes                | ❌ No      | ❌ No      |
-| Audit trail (who, when) | ✅ Yes (PageLogEntry) | ⚠️ Partial | ⚠️ Partial |
+| Capability             | Pages  | Images         | Documents      |
+| ---------------------- | ------ | -------------- | -------------- |
+| Version history        | ✅ Yes | ❌ No          | ❌ No          |
+| Version revert         | ✅ Yes | ❌ No          | ❌ No          |
+| Version comparison     | ✅ Yes | ❌ No          | ❌ No          |
+| Draft/Published states | ✅ Yes | ❌ No          | ❌ No          |
+| Scheduled publishing   | ✅ Yes | ❌ No          | ❌ No          |
+| Locking                | ✅ Yes | ❌ No          | ❌ No          |
+| Workflows              | ✅ Yes | ❌ No          | ❌ No          |
+| Audit trail            | ✅ Yes | ⚠️ Yes (basic) | ⚠️ Yes (basic) |
 
 In addition to the surface-level functionality, a lot of those features also combine with Wagtail’s permissions system so sensitive actions can only be performed by authorized users. Users might expect the same level of control for media versioning features.
 
@@ -39,7 +39,7 @@ In addition to the surface-level functionality, a lot of those features also com
 
 A lot of those page-centric features have been made available for snippets / arbitrary Django models (see [RFC 85](https://github.com/wagtail/rfcs/pull/85) and subsequent work). A natural step would be to extend all of the above features to images and documents. There is clear opportunity to reuse the mixins introduced for snippets (`RevisionMixin`, `DraftStateMixin`, `WorkflowMixin`, etc), but clear technical reasons why media types would need bespoke implementations.
 
-We expect there is enough of a need for this functionality to have it "on by default" for image/document media types, rather than requiring opt-in.
+**We expect there is enough of a need for this functionality to have it "on by default" for image/document media types, rather than requiring opt-in.**
 
 ### Expected challenges
 
@@ -67,13 +67,13 @@ This aspect of versioning can likely be implemented with the existing `RevisionM
 
 As a bonus, for images, users would likely appreciate if each entry in the history can display a thumbnail of the image as well.
 
-Implementing this with `RevisionMixin` would avoid introducing more fields to the image/document models, so should be compatible with custom image/document models. It’s unclear how this can be done to also track custom fields added to those models, so this may be a limitation.
+Implementing this with `RevisionMixin` would avoid introducing more fields to the image/document models, so should be compatible with custom image/document models. If we add `RevisionMixin` to the (abstract) base image/document classes, the functionality will also track fields added to custom image/document models.
 
-An alternative "MVP" history view could also be achieved by displaying audit trail entries (`ModelLogEntry` instances with `timestamp` and `user` fields) for a single media item. This would likely meet some user needs but wouldn’t qualify as versioning.
+Note: An alternative "MVP" history view could also be achieved by displaying audit trail entries (`ModelLogEntry` instances with `timestamp` and `user` fields) for a single media item. This would likely meet some user needs but wouldn’t qualify as versioning.
 
 #### Version revert
 
-This requires preserving not just the media metadata but also the underlying file. Some of the file storage backends support versioning natively, but we expect we would need to build for a low common denominator where files are simply stored as-is.
+This requires preserving not just the media metadata but also the underlying file. We would need to make sure `RevisionMixin` serializes `FileField` contents, and have multiple copies of the uploaded files. Some of the file storage backends support versioning natively, but we expect we would need to build for a low common denominator where versioned copies are managed via Wagtail by changing file names or file paths.
 
 This means:
 
@@ -131,10 +131,6 @@ Here are aspects of the work that have yet to be fully explored.
 ### Suitability of RevisionMixin for media versioning
 
 There are likely other unidentified blockers to its usage.
-
-### Approach to versioning custom media fields
-
-Left open for further exploration.
 
 ### Data migration onto existing sites
 
