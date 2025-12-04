@@ -128,6 +128,10 @@ There is a clear need for sites to have different retention policies for past ve
 
 Here are aspects of the work that have yet to be fully explored.
 
+### UX changes to discourage manual versioning
+
+On lots of projects, CMS users tend to create new media items to replace previous versions, rather than edit the existing image/document. It’s unclear if we should consider UX updates to encourage users to edit existing images / documents rather than just adding new ones.
+
 ### Suitability of RevisionMixin for media versioning
 
 There are likely other unidentified blockers to its usage.
@@ -139,6 +143,10 @@ It’s unclear what expectations there would be when introducing revisions on ex
 - Empty history
 - Single initial revision based on existing data
 - Backfill with audit log
+
+### Storage backend versioning
+
+Would it make sense to offload management of media version history to the storage backend?
 
 ### Collections permissions
 
