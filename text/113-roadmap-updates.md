@@ -130,6 +130,26 @@ Rename the existing "Autosave" roadmap item to "Concurrent editing", to reflect 
 
 Move existing item to “Future”. Dependent on completion of [Model search improvements](https://github.com/wagtail/roadmap/issues/116).
 
+### Multilingual content lifecycle
+
+Improve Wagtail’s support for multilingual websites by addressing common workflow, UX, and data‑model pain points around creating, updating, reviewing, and maintaining translated content. Tentatively includes:
+
+- Better workflows for maintaining translations.
+  - Simpler access to past translations.
+  - Switch page language.
+  - Translation history / audit trail.
+  - TBC: Simultaneous drafts on both source and target content.
+- Better editor UX for translation work: more contextual information, rich text support.
+- Improved tooling to compare content across locales (source vs translation, and version‑to‑version).
+- TBC: Improvements for workflows involving machine translations.
+
+More information:
+
+- [Improving support for multilingual websites #13693](https://github.com/wagtail/wagtail/discussions/13693)
+- [RFC 54: Internationalisation](https://github.com/wagtail/rfcs/blob/main/text/054-internationalisation.md)
+- [Wagtail Localize issue tracker](https://github.com/wagtail/wagtail-localize/issues)
+- [Wagtail issues tagged 'i18n'](https://github.com/wagtail/wagtail/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20label%3Acomponent%3Ai18n)
+
 ## Proposed roadmap items to close
 
 None
@@ -141,5 +161,3 @@ Here are possible roadmap items that were discussed but not included in the road
 - Documentation improvements incl. restructure
 - Front-end cache invalidation improvements
 - Strict CSP compatibility completion
-- Multilingual content lifecycle
-  - See [Improving support for multilingual websites #13693](https://github.com/wagtail/wagtail/discussions/13693)
