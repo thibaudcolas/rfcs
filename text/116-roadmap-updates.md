@@ -9,6 +9,19 @@
 
 This RFC provides a high-level overview of proposed [public roadmap](https://github.com/wagtail/roadmap) updates for future releases. For context, see [past roadmap-focused RFCs](https://github.com/wagtail/rfcs/pulls?q=is%3Apr+label%3Aroadmap) and the [Wagtail release schedule](https://github.com/wagtail/wagtail/wiki/Release-schedule).
 
+For each item, we provide an indicative "size" to represent the effort involved, and a strategic theme which maps to areas of [our product strategy](https://wagtail.org/product-strategy/):
+
+- **🏔️ Future-ready content management**: High-quality structured content, multiplayer content workflows, content discoverability and accessibility
+- **🪢 Deep integrations and customizations**: Structured data model, layered integration architecture, healthy package ecosystem.
+- **🛠️ DX for humans with AI**: Strong opinionated defaults, automation, comprehensive documentation.
+- **🌳 How we build Wagtail**: Strong design principles, sustainable contributor experience, community stewardship.
+
+And supporting work:
+
+- **🏗️ Enabling capabilities**: Key supporting and enabling capabilities to deliver our vision.
+- **🪴 Maintenance**: Table stakes / fundamental hygiene that supports other work.
+- **Other**: Everything else.
+
 ## Version number for the next release
 
 Provisional version number: v8.1 (minor release), in November 2026 based on discussions to date.
@@ -28,6 +41,16 @@ Here is the status of roadmap items for the latest release, v8.0 (August 2026):
 ## Roadmap for the next release
 
 Proposed roadmap items for v8.1 (November 2026).
+
+| Item                                                        | Size | Strategic theme                    |
+| ----------------------------------------------------------- | ---- | ---------------------------------- |
+| [SEO power tools](#seo-power-tools)                         | M    | 🏔️ Future-ready content management |
+| [Agent-ready publishing](#agent-ready-publishing)           | M    | 🏔️ Future-ready content management |
+| [Wagtail Space 2026](#wagtail-space-2026)                   | XL   | Other                              |
+| [Agent skills for DX](#agent-skills-for-dx)                 | S    | 🛠️ DX for humans with AI           |
+| [Security process automation](#security-process-automation) | M    | 🌳 How we build Wagtail            |
+| [Write API follow-ups](#write-api-follow-ups)               | L    | 🏗️ Enabling capabilities           |
+| [Maintenance automation](#maintenance-automation)           | M    | 🪴 Maintenance                     |
 
 ### [SEO power tools](https://github.com/wagtail/roadmap/issues/106)
 
@@ -109,6 +132,11 @@ Investments in fundamental maintenance and QA capabilities to sustain the projec
 
 Proposed roadmap items for v8.2 (February 2027):
 
+| Item                                                                        | Size | Strategic theme                    |
+| --------------------------------------------------------------------------- | ---- | ---------------------------------- |
+| [Enhanced dashboard UX](#enhanced-dashboard-ux)                             | M    | 🏔️ Future-ready content management |
+| [Integrated measurement and tracking](#integrated-measurement-and-tracking) | L    | 🏔️ Future-ready content management |
+
 ### Enhanced dashboard UX
 
 Size: M, Strategic theme: 🏔️ Future-ready content management
@@ -132,6 +160,14 @@ Delivery as a core feature and-or official package, based on discovery findings.
 
 ## Roadmap for "Future" releases
 
+| Item                                                  | Size | Strategic theme                         |
+| ----------------------------------------------------- | ---- | --------------------------------------- |
+| [GEO power tools](#geo-power-tools)                   | M    | 🏔️ Future-ready content management      |
+| [Documentation overhaul](#documentation-overhaul)     | L    | 🏗️ Enabling capabilities                |
+| [Generic content importer](#generic-content-importer) | M    | 🏔️ Future-ready content management      |
+| [Image rendition backends](#image-rendition-backends) | M    | 🪢 Deep integrations and customizations |
+| [Shareable previews](#shareable-previews)             | S    | 🏔️ Future-ready content management      |
+
 ### GEO power tools
 
 Size: M, Strategic theme: 🏔️ Future-ready content management
@@ -148,13 +184,19 @@ Built-in or package-based content checks and other supporting tools for Generati
 
 ### Documentation overhaul
 
+Size: L, Strategic theme: 🏗️ Enabling capabilities
+
 New documentation audit and [documentation reorganisation](https://github.com/wagtail/wagtail/issues/6781) to increase the quantity and quality of our docs, in line with the [product strategy](https://wagtail.org/product-strategy/)
 
 ### Generic content importer
 
+Size: M, Strategic theme: 🏔️ Future-ready content management
+
 A generic re-implementation of [Wagtail Content Import](https://github.com/torchbox/wagtail-content-import), based on our Markdown / HTML importer work in [RFC 115: Write API](https://wagtail.org/rfc-115/). Optioanlly enhanced with LLMs to generate StreamFIeld block structures.
 
 ### Image rendition backends
+
+Size: M, Strategic theme: 🪢 Deep integrations and customizations
 
 Refactoring of image renditions to a system of pluggable backends, to help us achieve crucial improvements that are architecturally hard to implement:
 
@@ -163,6 +205,8 @@ Refactoring of image renditions to a system of pluggable backends, to help us ac
 - [Support disabling/limiting use of image renditions](https://github.com/wagtail/wagtail/issues/3210)
 
 ### Shareable previews
+
+Size: S, Strategic theme: 🏔️ Future-ready content management
 
 Implement a new system to share drafts or previews with users who do not have access to the CMS, as demonstrated by [wagtail-sharing](https://github.com/cfpb/wagtail-sharing), and to some degree by [wagtail-headless-preview](https://github.com/torchbox/wagtail-headless-preview).
 
