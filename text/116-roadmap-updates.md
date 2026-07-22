@@ -97,10 +97,13 @@ Size: M, Strategic theme: 🪴 Maintenance
 
 Investments in fundamental maintenance and QA capabilities to sustain the project. Expected work:
 
-- Maintenance backlog curation
+- Maintenance backlog curation, with weighted list of issues
 - Experiment with agentic code review for core
 - [bakerydemo dev app setup](https://github.com/wagtail/bakerydemo/issues/733)
 - Contributing docs overhaul
+  - [More documentation guidelines for contributors](https://github.com/wagtail/wagtail/issues/13801)
+  - [Switch from make / Makefile to just / justfile](https://github.com/wagtail/wagtail/issues/14396)
+- Automated performance reviews (higher confidence on risk of performance regressions in releases)
 
 ## Roadmap for the next+1 release
 
@@ -145,7 +148,7 @@ Built-in or package-based content checks and other supporting tools for Generati
 
 ### Documentation overhaul
 
-TODO.
+TODO. Gaps around admin customizations for example.
 
 ### Doc to StreamField AI builder
 
