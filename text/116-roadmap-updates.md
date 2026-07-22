@@ -156,11 +156,15 @@ A generic re-implementation of [Wagtail Content Import](https://github.com/torch
 
 ### Image rendition backends
 
-TODO. Refactoring of image renditions to a system of pluggable backends
+Refactoring of image renditions to a system of pluggable backends, to help us achieve crucial improvements that are architecturally hard to implement:
+
+- [Upfront generation of image renditions #929](https://github.com/wagtail/wagtail/issues/929)
+- [Deferring image renditions](https://github.com/wagtail/wagtail/issues/3868)
+- [Support disabling/limiting use of image renditions](https://github.com/wagtail/wagtail/issues/3210)
 
 ### Shareable previews
 
-TODO.
+Implement a new system to share drafts or previews with users who do not have access to the CMS, as demonstrated by [wagtail-sharing](https://github.com/cfpb/wagtail-sharing), and to some degree by [wagtail-headless-preview](https://github.com/torchbox/wagtail-headless-preview).
 
 ## Proposed roadmap items to close
 
