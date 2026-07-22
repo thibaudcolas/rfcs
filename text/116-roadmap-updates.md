@@ -101,8 +101,8 @@ Investments in fundamental maintenance and QA capabilities to sustain the projec
 - Experiment with agentic code review for core
 - [bakerydemo dev app setup](https://github.com/wagtail/bakerydemo/issues/733)
 - Contributing docs overhaul
-  - [More documentation guidelines for contributors](https://github.com/wagtail/wagtail/issues/13801)
-  - [Switch from make / Makefile to just / justfile](https://github.com/wagtail/wagtail/issues/14396)
+    - [More documentation guidelines for contributors](https://github.com/wagtail/wagtail/issues/13801)
+    - [Switch from make / Makefile to just / justfile](https://github.com/wagtail/wagtail/issues/14396)
 - Automated performance reviews (higher confidence on risk of performance regressions in releases)
 
 ## Roadmap for the next+1 release
@@ -148,11 +148,11 @@ Built-in or package-based content checks and other supporting tools for Generati
 
 ### Documentation overhaul
 
-TODO. Gaps around admin customizations for example.
+New documentation audit and [documentation reorganisation](https://github.com/wagtail/wagtail/issues/6781) to increase the quantity and quality of our docs, in line with the [product strategy](https://wagtail.org/product-strategy/)
 
-### Doc to StreamField AI builder
+### Generic content importer
 
-TODO.
+A generic re-implementation of [Wagtail Content Import](https://github.com/torchbox/wagtail-content-import), based on our Markdown / HTML importer work in [RFC 115: Write API](https://wagtail.org/rfc-115/). Optioanlly enhanced with LLMs to generate StreamFIeld block structures.
 
 ### Image rendition backends
 
