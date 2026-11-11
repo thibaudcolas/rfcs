@@ -3,7 +3,7 @@
 - RFC: 118
 - Author: Thibaud Colas
 - Created: 2026-11-04
-- Last Modified: 2026-11-04
+- Last Modified: 2026-11-11
 
 ## Abstract
 
@@ -17,27 +17,27 @@ Provisional version number: v8.2 (minor release), in February 2027 based on disc
 
 Here is the status of roadmap items for the latest release, v8.1 (November 2026):
 
-| Roadmap item                                                                 | Status | Notes |
-| ---------------------------------------------------------------------------- | ------ | ----- |
-| [SEO power tools](https://github.com/wagtail/roadmap/issues/106)             | Done    | Follow-ups outside the roadmap       |
-| [Agent-ready publishing](https://github.com/wagtail/roadmap/issues/244)      | Done    | Follow-ups outside the roadmap |
-| [Wagtail Space 2026](https://github.com/wagtail/roadmap/issues/233)          | Done    | Follow-ups outside the roadmap |
-| [Agent skills for DX](https://github.com/wagtail/roadmap/issues/241)         | Done    | Follow-ups outside the roadmap |
-| [Security process automation](https://github.com/wagtail/roadmap/issues/240) | Done    | Follow-ups outside the roadmap |
-| [Write API follow-ups](https://github.com/wagtail/roadmap/issues/239)        | Done    | Follow-ups outside the roadmap |
-| [Maintenance automation](https://github.com/wagtail/roadmap/issues/243)      | Done    | Follow-ups outside the roadmap |
+| Roadmap item                                                                 | Status | Notes                          |
+| ---------------------------------------------------------------------------- | ------ | ------------------------------ |
+| [SEO power tools](https://github.com/wagtail/roadmap/issues/106)             | Done   | Follow-ups outside the roadmap |
+| [Agent-ready publishing](https://github.com/wagtail/roadmap/issues/244)      | Done   | Follow-ups outside the roadmap |
+| [Wagtail Space 2026](https://github.com/wagtail/roadmap/issues/233)          | Done   | Follow-ups outside the roadmap |
+| [Agent skills for DX](https://github.com/wagtail/roadmap/issues/241)         | Done   | Follow-ups outside the roadmap |
+| [Security process automation](https://github.com/wagtail/roadmap/issues/240) | Done   | Follow-ups outside the roadmap |
+| [Write API follow-ups](https://github.com/wagtail/roadmap/issues/239)        | Done   | Follow-ups outside the roadmap |
+| [Maintenance automation](https://github.com/wagtail/roadmap/issues/243)      | Done   | Follow-ups outside the roadmap |
 
 ## Roadmap for the next release
 
 Proposed roadmap items for v8.2 (February 2027).
 
-| Item                                                                        | Size | Strategic theme                        |
-| --------------------------------------------------------------------------- | ---- | -------------------------------------- |
-| [JPEG XL images support](#jpeg-xl-images-support)                           | S    | 🏔️ Future-ready content management     |
-| [API v3 stable](#api-v3-stable)                                             | L    | 🏗️ Enabling capabilities               |
-| [Permission model refinements](#permission-model-refinements)               | L    | 🏗️ Enabling capabilities               |
-| [Documentation overhaul](#documentation-overhaul)                           | L    | 🏗️ Enabling capabilities               |
-| [MCP experimentation](#mcp-experimentation)                                 | L    | 🛠️ DX for humans with AI               |
+| Item                                                          | Size | Strategic theme                    |
+| ------------------------------------------------------------- | ---- | ---------------------------------- |
+| [JPEG XL images support](#jpeg-xl-images-support)             | S    | 🏔️ Future-ready content management |
+| [API v3 stable](#api-v3-stable)                               | L    | 🏗️ Enabling capabilities           |
+| [Permission model refinements](#permission-model-refinements) | L    | 🏗️ Enabling capabilities           |
+| [Documentation overhaul](#documentation-overhaul)             | L    | 🏗️ Enabling capabilities           |
+| [MCP UX experimentation](#mcp-ux-experimentation)             | L    | 🏔️ Future-ready content management |
 
 ### [JPEG XL images support](https://github.com/wagtail/roadmap/issues/235)
 
@@ -65,7 +65,7 @@ Improvements to Wagtail's permissions model beyond the current page tree-based i
 
 - [Implement a 'choose' permission for pages](https://github.com/wagtail/wagtail/issues/9714)
 - TBC: [Implement a "choose" permission for non-page models (snippets etc.)](https://github.com/wagtail/wagtail/issues/14272)
-- Per-instance permission checks for [custom permissions support](https://github.com/wagtail/wagtail/issues/2907)
+- Per-instance permission checks for [custom permissions support](https://github.com/wagtail/wagtail/issues/2907) / [assign page level permissions to a user](https://github.com/wagtail/wagtail/issues/4498).
 
 ### [Documentation overhaul](https://github.com/wagtail/roadmap/issues/236)
 
@@ -73,15 +73,17 @@ Size: L, Strategic theme: 🏗️ Enabling capabilities
 
 New documentation audit and [documentation reorganisation](https://github.com/wagtail/wagtail/issues/6781) to increase the quantity and quality of our docs, in line with the [product strategy](https://wagtail.org/product-strategy/). Expecting more content for developer docs, user guide, and marketing.
 
-### MCP experimentation
+### MCP UX experimentation
 
-Size: M, Strategic theme: 🛠️ DX for humans with AI
+Size: M, Strategic theme: 🏔️ Future-ready content management
 
-Iterations on the experimental [Wagtail MCP package](https://github.com/wagtail/wagtail-mcp) to bring it closer to production readiness, incorporating feedback from early adopters and addressing identified gaps in functionality and usability, building upon the v3 API. Tentatively:
+Iterations on the experimental [Wagtail MCP package](https://github.com/wagtail/wagtail-mcp) with a focus on user experience and production readiness. The goal is to incorporate feedback from early adopters, address identified gaps, and understand where MCP fits into how people will use Wagtail in 2027.
 
-- Production infrastructure compatibility
-- Experimentation with in-CMS agentic UIs
-- Prompt injection defense
+Tentative scope:
+
+- Experimentation with in-CMS agentic UIs via [MCP Apps](https://modelcontextprotocol.io/extensions/apps/overview) / [AG-UI](https://docs.ag-ui.com/introduction) / [A2UI](https://a2ui.org/).
+- Production infrastructure compatibility to support larger-scale experimentation.
+- Prompt injection defense / red teaming of agentic CMS setups.
 
 Also includes work on the [User guide MCP](https://guide.wagtail.org/en/about/documentation-formats/#mcp-server), to provide agents with guidance on how Wagtail works.
 
@@ -89,35 +91,30 @@ Also includes work on the [User guide MCP](https://guide.wagtail.org/en/about/do
 
 Proposed roadmap items for v8.3 LTS (May 2027).
 
-| Item                                                                        | Size | Strategic theme                        |
-| --------------------------------------------------------------------------- | ---- | -------------------------------------- |
-| [Enhanced dashboard UX](#enhanced-dashboard-ux)                             | M    | 🏔️ Future-ready content management     |
-| [Integrated measurement and tracking](#integrated-measurement-and-tracking) | L    | 🏔️ Future-ready content management     |
-| [API v3 final](#api-v3-final)                                               | L    | 🏔️ Future-ready content management     |
-
-
-### [Enhanced dashboard UX](https://github.com/wagtail/roadmap/issues/246)
-
-Size: M, Strategic theme: 🏔️ Future-ready content management
-
-A new iteration of [Enhanced dashboard](https://github.com/wagtail/roadmap/issues/45) based on UX research and scoping to identify 3-5 high-impact dashboard improvements.
-
-Likely items:
-
-- A "Create content" entry point
-- Custom dashboard panels (frequent actions, bookmarks, owned pages)
-- Workflow approval UI improvements
+| Item                                                                        | Size | Strategic theme                    |
+| --------------------------------------------------------------------------- | ---- | ---------------------------------- |
+| [Integrated measurement and tracking](#integrated-measurement-and-tracking) | L    | 🏔️ Future-ready content management |
+| [Shareable previews](#shareable-previews)                                   | S    | 🏔️ Future-ready content management |
+| [Generic content importer](#generic-content-importer)                       | M    | 🏔️ Future-ready content management |
+| [API v3 final](#api-v3-final)                                               | L    | 🏔️ Future-ready content management |
 
 ### [Integrated measurement and tracking](https://github.com/wagtail/roadmap/issues/247)
 
 Size: L, Strategic theme: 🏔️ Future-ready content management
 
-Spinning this off from [Enhanced dashboard](https://github.com/wagtail/roadmap/issues/45). R&D into use cases and architecture for content performance within the Wagtail admin.
+_Moving from Wagtail 8.2, to Wagtail 8.3 LTS_.
 
-Delivery as a core feature and-or official package, based on discovery findings. Likely items:
+### [Shareable previews](https://github.com/wagtail/roadmap/issues/237)
 
-- A lightweight framework for tracking content KPIs (accessibility, sustainability / carbon emissions, SEO, analytics)
-- Reporting of the KPIs in the page editor, dedicated reports, APIs, dashboard panels
+Size: S, Strategic theme: 🏔️ Future-ready content management
+
+_Moving from "Future" backlog to Wagtail 8.3 LTS, pending feature sponsorship._
+
+### [Generic content importer](https://github.com/wagtail/roadmap/issues/245)
+
+Size: M, Strategic theme: 🏔️ Future-ready content management
+
+_Moving from "Future" backlog to Wagtail 8.3 LTS, pending feature sponsorship._
 
 ### API v3 final
 
@@ -127,12 +124,21 @@ Finalization of the API v3 and deprecation of the v2 API.
 
 ## Roadmap for "Future" releases
 
-No changes
+### [Enhanced dashboard UX](https://github.com/wagtail/roadmap/issues/246)
+
+Size: M, Strategic theme: 🏔️ Future-ready content management
+
+_Moving from Wagtail 8.2, to "Future" backlog_.
 
 ## Proposed roadmap items to close
 
-TBC
+### [Permissions registry](https://github.com/wagtail/roadmap/issues/81)
+
+Key foundations shipped in Wagtail 8.0, and there is more coming in Wagtail 8.2 as part of [Permission model refinements](#permission-model-refinements). There is not a lot of value in keeping the roadmap item.
 
 ## Items that didn't make the cut
 
-TBC
+- [Choosers UI improvements #109](https://github.com/wagtail/roadmap/issues/109): still a high-value item but deferred until we are more confident in the overall direction of the Wagtail admin UI.
+- Agentic security auditing: we will experiment with this outside of the roadmap
+- SEO power tools follow-ups: too small to warrant inclusion in the roadmap at this stage
+- [CLI](https://github.com/wagtail/wagtail-cli) improvements: can happen in parallel to API development
