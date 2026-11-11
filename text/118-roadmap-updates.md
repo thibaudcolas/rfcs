@@ -34,10 +34,10 @@ Proposed roadmap items for v8.2 (February 2027).
 | Item                                                                        | Size | Strategic theme                        |
 | --------------------------------------------------------------------------- | ---- | -------------------------------------- |
 | [JPEG XL images support](#jpeg-xl-images-support)                           | S    | 🏔️ Future-ready content management     |
-| API v3 stable                                                               | L    | 🏗️ Enabling capabilities               |
-| Permissions improvements                                                    | L    | 🏗️ Enabling capabilities               |
+| [API v3 stable](#api-v3-stable)                                             | L    | 🏗️ Enabling capabilities               |
+| [Permission model refinements](#permission-model-refinements)               | L    | 🏗️ Enabling capabilities               |
 | [Documentation overhaul](#documentation-overhaul)                           | L    | 🏗️ Enabling capabilities               |
-| MCP                                                                         | L    | 🛠️ DX for humans with AI               |
+| [MCP experimentation](#mcp-experimentation)                                 | L    | 🛠️ DX for humans with AI               |
 
 ### [JPEG XL images support](https://github.com/wagtail/roadmap/issues/235)
 
@@ -49,14 +49,15 @@ Support for [JPEG XL](https://en.wikipedia.org/wiki/JPEG_XL) (.jxl) image upload
 
 Size: L, Strategic theme: 🏗️ Enabling capabilities
 
-Stabilization of the [v3 API](https://docs.wagtail.org/en/latest/advanced_topics/api/v3/index.html.md) preview, with the goal of it being a safe default for new API-facing projects. Tentatively including:
+Continuation of [Write API follow-ups](https://github.com/wagtail/roadmap/issues/239). Stabilization of the [v3 API](https://docs.wagtail.org/en/latest/advanced_topics/api/v3/index.html) to drop its 'preview' label, with the goal of it being a safe default for new headless projects and production-ready for "write" integration use cases. Tentatively including:
 
-- Dogfooding of API v3 within the project
-- More API v3 coverage in documentation
-- TBC: API v2 feature parity goals
-- TBC: Custom / complex use cases
+- Adoption of the v3 API for [bakerydemo-headless](https://github.com/wagtail/bakerydemo-headless)
+- Dogfooding of API v3 for the Wagtail user guide, and wagtail.org
+- More API v3 content in developer docs, user docs, tutorials, marketing.
+- API v2 feature parity, formal deprecation, and official "v2 API" replacement package.
+- More advanced authentication features (tokens expiry, pluggable auth, etc)
 
-### Granular permission model
+### Permission model refinements
 
 Size: L, Strategic theme: 🏗️ Enabling capabilities
 
@@ -70,17 +71,19 @@ Improvements to Wagtail's permissions model beyond the current page tree-based i
 
 Size: L, Strategic theme: 🏗️ Enabling capabilities
 
-New documentation audit and [documentation reorganisation](https://github.com/wagtail/wagtail/issues/6781) to increase the quantity and quality of our docs, in line with the [product strategy](https://wagtail.org/product-strategy/)
+New documentation audit and [documentation reorganisation](https://github.com/wagtail/wagtail/issues/6781) to increase the quantity and quality of our docs, in line with the [product strategy](https://wagtail.org/product-strategy/). Expecting more content for developer docs, user guide, and marketing.
 
 ### MCP experimentation
 
 Size: M, Strategic theme: 🛠️ DX for humans with AI
 
-Iterations on the experimental [Wagtail MCP package](https://github.com/wagtail/wagtail-mcp) to bring it closer to production readiness, incorporating feedback from early adopters and addressing identified gaps in functionality and usability. Tentatively:
+Iterations on the experimental [Wagtail MCP package](https://github.com/wagtail/wagtail-mcp) to bring it closer to production readiness, incorporating feedback from early adopters and addressing identified gaps in functionality and usability, building upon the v3 API. Tentatively:
 
 - Production infrastructure compatibility
-- TBC: In-CMS agentic interface
-- TBC: Prompt injection defense
+- Experimentation with in-CMS agentic UIs
+- Prompt injection defense
+
+Also includes work on the [User guide MCP](https://guide.wagtail.org/en/about/documentation-formats/#mcp-server), to provide agents with guidance on how Wagtail works.
 
 ## Roadmap for the next+1 release
 
@@ -90,7 +93,7 @@ Proposed roadmap items for v8.3 LTS (May 2027).
 | --------------------------------------------------------------------------- | ---- | -------------------------------------- |
 | [Enhanced dashboard UX](#enhanced-dashboard-ux)                             | M    | 🏔️ Future-ready content management     |
 | [Integrated measurement and tracking](#integrated-measurement-and-tracking) | L    | 🏔️ Future-ready content management     |
-| [API v3 final](#api-v3-final) | L    | 🏔️ Future-ready content management     |
+| [API v3 final](#api-v3-final)                                               | L    | 🏔️ Future-ready content management     |
 
 
 ### [Enhanced dashboard UX](https://github.com/wagtail/roadmap/issues/246)
@@ -120,10 +123,7 @@ Delivery as a core feature and-or official package, based on discovery findings.
 
 Size: L, Strategic theme: 🏗️ Enabling capabilities
 
-Finalization of the API v3 and deprecation of the v2 API. Including any further improvements identified during the v3 preview period. Earmarked features:
-
-- API tokens expiry and more advanced token management features
-- CMS UX adjustments for service accounts
+Finalization of the API v3 and deprecation of the v2 API.
 
 ## Roadmap for "Future" releases
 
